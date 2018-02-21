@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from './coffee.js';
-import { VictoryScatter, VictoryChart, VictoryTheme, VictoryBrushContainer, VictoryZoomContainer } from 'victory';
+import { VictoryScatter, VictoryChart, VictoryTheme, VictoryBrushContainer, VictoryZoomContainer, VictoryAxis } from 'victory';
 //take 1
 export default class Scatter extends React.Component {
   constructor() {
@@ -32,6 +32,8 @@ export default class Scatter extends React.Component {
               />
             }
           >
+        <VictoryAxis style={ { axisLabel: { fontSize: 15 }, tickLabels: { fontSize: 15 } } } label='year'/>
+        <VictoryAxis style={ { axisLabel: { fontSize: 15 }, tickLabels: { fontSize: 15 } } } label='dollars' dependentAxis />
         <VictoryScatter
           style={{ data: { fill: "#c43a31" } }}
           data={ formattedData }
