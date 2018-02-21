@@ -65,7 +65,7 @@ export default class Pie extends React.Component {
             style={{ labels: { fontSize: 7 } }}
             padding={10}
           />
-          <h3> 2014 </h3>
+          <h2> 2014 </h2>
           <VictoryPie
             data={year14ByDayOfWeek}
             cornerRadius={3}
@@ -74,7 +74,7 @@ export default class Pie extends React.Component {
             style={{ labels: { fontSize: 7 } }}
             padding={10}
           />
-         <h3> 2015 </h3>
+         <h2> 2015 </h2>
           <VictoryPie
             data={year15ByDayOfWeek}
             cornerRadius={3}
@@ -83,7 +83,7 @@ export default class Pie extends React.Component {
             style={{ labels: { fontSize: 7 } }}
             padding={10}
           />
-          <h3> 2016 </h3>
+          <h2> 2016 </h2>
             <VictoryPie
             data={year16ByDayOfWeek}
             cornerRadius={3}
@@ -92,7 +92,7 @@ export default class Pie extends React.Component {
             style={{ labels: { fontSize: 7 } }}
             padding={10}
           />
-          <h3> 2017 </h3>
+          <h2> 2017 </h2>
            <VictoryPie
             data={year17ByDayOfWeek}
             cornerRadius={3}
@@ -101,7 +101,7 @@ export default class Pie extends React.Component {
             style={{ labels: { fontSize: 7 } }}
             padding={10}
           />
-          <h3> 2018 </h3>
+          <h2> 2018 </h2>
           <VictoryPie
             data={year18ByDayOfWeek}
             cornerRadius={3}
