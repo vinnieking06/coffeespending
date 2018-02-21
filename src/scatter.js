@@ -1,6 +1,6 @@
 import React from 'react';
 import { data } from './coffee.js';
-import { VictoryScatter, VictoryChart, VictoryTheme, VictoryBrushContainer, VictoryZoomContainer, VictoryAxis } from 'victory';
+import { VictoryScatter, VictoryChart, VictoryBrushContainer, VictoryZoomContainer, VictoryAxis } from 'victory';
 //take 1
 export default class Scatter extends React.Component {
   constructor() {
