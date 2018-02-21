@@ -40,6 +40,8 @@ const renderGraph = (state) => {
       return <Scatter />
     case 'zoom':
       return <ZoomScatter />
+    default:
+      return <div> <h1> Who likes Starbucks? </h1></div>
   }
 }
 export default App;
