@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { data } from './coffee.js';
-import { VictoryScatter, VictoryChart, VictoryTheme, VictoryZoomContainer, VictoryLine } from 'victory';
+import { VictoryScatter, VictoryChart, VictoryTheme, VictoryZoomContainer, VictoryLine, VictoryLegend, VictoryAxis } from 'victory';
 //take 1
 export default class Scatter extends React.Component {
   monthly = (data) => {
@@ -36,11 +36,9 @@ export default class Scatter extends React.Component {
     const year15ByMonth = this.monthly(year15);
     const year16ByMonth = this.monthly(year16);
     const year17ByMonth = this.monthly(year17);
+    console.log('17',year17ByMonth)
     const year18ByMonth = this.monthly(year18);
-    console.log(year17, year17ByMonth)
 
-
-   // console.log(year15ByMonth)
     const formattedData = data.map((item) => {
       return {
         x: item.Date, y: parseInt(item.Amount)
@@ -48,50 +46,63 @@ export default class Scatter extends React.Component {
     })
 
     return (
-      <VictoryChart
-      >
-        <VictoryLine
-          style={{
-            data: { stroke: "black" },
-            parent: { border: "1px solid #ccc"}
-          }}
-          data={year13ByMonth}
-        />
-                <VictoryLine
-          style={{
-            data: { stroke: "red" },
-            parent: { border: "1px solid #ccc"}
-          }}
-          data={year14ByMonth}
-        />
-                <VictoryLine
-          style={{
-            data: { stroke: "yellow" },
-            parent: { border: "1px solid #ccc"}
-          }}
-          data={year15ByMonth}
-        />
-                <VictoryLine
-          style={{
-            data: { stroke: "orange" },
-            parent: { border: "1px solid #ccc"}
-          }}
-          data={year16ByMonth}
-        />
-                <VictoryLine
-          style={{
-            data: { stroke: "blue" },
-            parent: { border: "1px solid #ccc"}
-          }}
-          data={year17ByMonth}
-        />
-                       <VictoryLine
-          style={{
-            data: { stroke: "silver" },
-            parent: { border: "1px solid #ccc"}
-          }}
-          data={year17ByMonth}
-        />
+      <VictoryChart height={200} >
+        <VictoryLegend y={0}
+          title='Coffee spending by year'
+          centerTitle gutter={20}
+          orientation='horizontal'
+          data={[
+            {name: '2013', symbol: { fill: 'black'}},
+            {name: '2014', symbol: { fill: 'red' }},
+            {name: '2015', symbol: { fill: 'yellow' }},
+            {name: '2016', symbol: { fill: 'orange' }},
+            {name: '2017', symbol: { fill: 'blue' }},
+            {name: '2018', symbol: { fill: 'silver' }},
+            ]} />
+          <VictoryAxis style={ { axisLabel: { fontSize: 8 }, tickLabels: { fontSize: 8 } } } label='year'/>
+          <VictoryAxis style={ { axisLabel: { fontSize: 8 }, tickLabels: { fontSize: 8 } } } label='dollars' dependentAxis />
+          <VictoryLine
+            style={{
+              data: { stroke: "black" },
+              parent: { border: "1px solid #ccc"}
+            }}
+            data={year13ByMonth}
+          />
+          <VictoryLine
+            style={{
+              data: { stroke: "red" },
+              parent: { border: "1px solid #ccc"}
+            }}
+            data={year14ByMonth}
+          />
+          <VictoryLine
+            style={{
+              data: { stroke: "yellow" },
+              parent: { border: "1px solid #ccc"}
+            }}
+            data={year15ByMonth}
+          />
+          <VictoryLine
+            style={{
+              data: { stroke: "orange" },
+              parent: { border: "1px solid #ccc"}
+            }}
+            data={year16ByMonth}
+          />
+          <VictoryLine
+            style={{
+              data: { stroke: "blue" },
+              parent: { border: "1px solid #ccc"}
+            }}
+            data={year17ByMonth}
+          />
+          <VictoryLine
+            style={{
+              data: { stroke: "silver" },
+              parent: { border: "1px solid #ccc"}
+            }}
+            data={year18ByMonth}
+          />
       </VictoryChart>
     )
   }
